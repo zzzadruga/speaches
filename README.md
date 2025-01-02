@@ -1,3 +1,30 @@
+---
+title: Speaches
+colorFrom: yellow
+colorTo: pink
+sdk: docker
+app_port: 8000
+# https://huggingface.co/docs/hub/en/spaces-config-reference
+suggested_hardware: t4-small
+preload_from_hub:
+  - Systran/faster-distil-whisper-large-v3
+  - Systran/faster-distil-whisper-small.en
+  - Systran/faster-whisper-large-v3
+  - Systran/faster-whisper-medium.en
+  - Systran/faster-whisper-small
+  - Systran/faster-whisper-small.en
+  - Systran/faster-whisper-tiny.en
+  - rhasspy/piper-voices
+  - hexgrad/Kokoro-82M
+---
+
+```sh
+git remote add huggingface-space https://huggingface.co/spaces/speaches-ai/speaches
+git push --force huggingface-space huggingface-space:main
+```
+
+TODO: Configure environment variables. See [this](https://huggingface.co/docs/hub/en/spaces-overview#managing-secrets).
+
 > [!NOTE]
 > This project was previously named `faster-whisper-server`. I've decided to change the name from `faster-whisper-server`, as the project has evolved to support more than just transcription.
 
@@ -39,7 +66,6 @@ TODO
 ### Speech Generation
 
 https://github.com/user-attachments/assets/0021acd9-f480-4bc3-904d-831f54c4d45b
-
 
 ### Live Transcription (using WebSockets)
 
